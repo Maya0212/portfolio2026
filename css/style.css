@@ -1,0 +1,207 @@
+/* #BASE CSS (Initital Setup)
+---------------------------------
+    #BASE CONTENT
+        #TYPOGRAPHY
+            #BODY
+            #HEADINGS 
+            #HEADING LAYOUT
+            #PARAGRAPHS
+            #LINKS
+            #HELPERS
+        #MEDIA
+            #IMAGES
+            #OVERLAY
+        #COMPONENTS
+            #BUTTONS
+    #BASE LAYOUT
+        #SIMPLE RESET
+        #MEDIAQUERIES
+        #CONTAINER
+        #GRID SYSTEM
+    #BASE SITE
+        #SITE STRUCTURE
+            #HEADER
+                # site-id (LOGO)
+            #FOOTER
+            #SECTIONS
+            #SUB PAGES
+        #SITE NAVIGATION
+            #TOGGLE-NAV (Default for Small Screens)
+    #SITE MAIN
+        #TEXT RIGHT 
+        #KEYFRAMES
+    #ANIMATION
+    #VIDEO
+    ＃ABOUT
+--------------------------------- */
+
+:root {
+
+     /* DEFINE ALL COMMONLY USED COLORS HERE */
+    --color-white: #ebf2f2;
+
+     /* SIZING UNITS */
+    --unit-2xs: 0.25rem;
+    --unit-xs: 0.5rem;
+    --unit-s: 1rem;
+    --unit-m: 1.5rem;
+    --unit-l: 2rem;
+    --unit-xl: 3rem;
+    --unit-2xl: 4rem;
+    --unit-3xl: 6rem;
+    --unit-4xl: 9rem;
+    --container-width: 1100px;
+    --container-width: 80vw;
+
+    /*  DEFINE ALL FONTS USED HERE */
+    --font-headings: "alga", serif;
+    --font-body: "textbook-new", sans-serif;
+}
+
+/* BASE TYPOGRAPHY */ 
+/* BODY */
+body {
+    font-family: "textbook-new", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #333;
+    line-height: 1.4;
+    font-size: 100%;
+}
+
+.project-page {
+    overflow-x: visible;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+/* HEADING */
+h2 {
+    font-size: var(--unit-2xl)
+}
+h1, h2 {
+    font-family: var(--font-headings);
+    font-weight: 700;
+    font-style: normal;
+    color: var(--color-white);
+}
+
+/* clamp(最小, 可変, 最大) 画面の大きさによってfontのサイズを変更 */
+.section1 h1, .section2 h1 {
+  font-size: clamp(24px, 6vw, 35px);
+}
+
+.section1 h2 {
+  font-size: clamp(30px, 3.2vw, 80px);
+}
+
+.section1 p, .section2 p {
+  font-size: clamp(20px, 1.8vw, 30px);
+}
+
+
+/* HEADING LAYOUT */
+
+
+.section1, .section2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.section1 h1, .section2 h1 {
+  position: fixed;
+  top: 250px;
+  left: 150px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  margin: 0;
+  line-height: 1;
+  letter-spacing: 0.15em;
+
+  translate: 0 -0.1em;
+  z-index: 1000;
+
+  transform-origin: left top;
+    text-indent: 1.35em;
+    letter-spacing: 0.08em;
+    line-height: 1.3;
+    padding-left: 0;
+}
+
+
+
+
+
+
+/* CONTAINER */
+.container {
+    max-width: var(--container-width);
+}
+
+
+/* GSAP */
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.zindex-container {
+  position: relative;
+  width: 100vw;
+  height: 70vh;
+  border: 1px solid purple;
+  z-index: 100;
+  /* background: #000; */
+}
+
+.normal-container {
+  position: relative;
+  /* top: 50vh; */
+  width: 100%;
+  z-index: 0;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+.section1 {
+  background-color: rgb(18, 18, 18);
+  z-index: 3;
+}
+.section2 {
+  background-color: rgb(23, 23, 23);
+  z-index: 2;
+}
