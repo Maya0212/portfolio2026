@@ -9,12 +9,14 @@ const tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".zindex-container",
     start: "top top",
-    end: "+=350%",
+    end: "+=300%",
     scrub: true,
     pin: true,
     anticipatePin: 1
   }
 });
+
+
 
 /* z 軸演出 */
 tl.to(".section1", {
