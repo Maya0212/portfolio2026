@@ -9,7 +9,7 @@ const tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".zindex-container",
     start: "top top",
-    end: "+=300%",
+    end: "+=100%",
     scrub: true,
     pin: true,
     anticipatePin: 1
@@ -22,39 +22,40 @@ const tl = gsap.timeline({
 tl.to(".section1", {
   z: 400,
   opacity: 0,
-  duration: 1
+  duration: 3
 })
 .to(".section2", {
-  z: 400,
-  opacity: 0,
+  z: 100,
+  opacity: 1,
   duration: 1
 })
 
 /* 👇 ここが肝 */
 .to(".zindex-container", {
-  scale: 1.3,
+  scale: 1,
   yPercent: -50,
-  autoAlpha: 0,
+  autoAlpha: 1,
   duration: 1,
   ease: "power2.inOut"
 })
-.to(".black-container", {
-  y: 0,
-  autoAlpha: 1,
-  duration: 1,
-  ease: "power2.out"
-}, "<"); // ← 完全同時
+// .to(".black-container", {
+//   y: 0,
+//   autoAlpha: 1,
+//   duration: 1,
+//   ease: "power2.out"
+// }, "<"); 
+// ← 完全同時
 
-
-gsap.to(".section1 .title", {
-  y: -200,   // 上に200px移動
-  scrollTrigger: {
-    trigger: ".section1",
-    start: "top top",
-    end: "bottom top",
-    scrub: true
-  }
-});
+ // 上に200px移動
+// gsap.to(".section1 .title", {
+//   y: -200,  
+//   scrollTrigger: {
+//     trigger: ".section1",
+//     start: "top top",
+//     end: "bottom top",
+//     scrub: true
+//   }
+// });
 
 gsap.to(".section1 .subtitle", {
   y: -150,   // 上に150px移動

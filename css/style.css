@@ -155,8 +155,7 @@ h1, h2 {
 } */
 
 .zindex-container {
-  background-color: #000000;
-  
+  /* background-color: #000000; */
 }
 
 /* #GRID SYSTEM */
@@ -207,7 +206,21 @@ h1, h2 {
   gap: 70px; /* ← ここが画像の間のスペース */
 }
 
+.column.one-half {
+  flex: 0 0 48%; /* 2列に収める（gap考慮して48%くらい） */
+  max-width: 48%;
+}
+
 /* BASE SITE */
+
+/* header logo */
+.title {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 1000;
+  margin: 0;
+}
 
 /* FOOTER */
 footer {
@@ -216,6 +229,28 @@ footer {
     text-align: center;
     width: 100%;
     border-top: 1px solid #1c1c1c;
+}
+
+/*  MEDIA QUERIES */
+
+@media (max-width: 768px) {
+   /* MOBILE SIZED STYLING GOES HERE */
+
+}
+
+@media (min-width: 1050px) {
+    body {
+        font-size: 112.5%; 
+    }
+}
+
+@media (min-width: 1250px) {
+    body {
+        font-size: 137.5%; 
+    }    
+    /* .container {
+            max-width: 1200px;
+    } */
 }
 
 
@@ -286,9 +321,9 @@ section {
   /* padding-top: -500vh; */
 }
 
-/* img {
-  max-width: 100%;
+img {
+  max-width: 95%;
   height: auto;
   display: block;
 
-} */
+}
