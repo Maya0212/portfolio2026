@@ -15,7 +15,7 @@ const tl = gsap.timeline({
     anticipatePin: 1
   }
 });
-
+3
 
 
 /* z 軸演出 */
@@ -25,6 +25,7 @@ tl.to(".section1", {
   duration: 3
 })
 .to(".section2", {
+  scale: 1,
   z: 100,
   opacity: 1,
   duration: 1
