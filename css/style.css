@@ -19,10 +19,12 @@
         #MEDIAQUERIES
         #CONTAINER
         #GRID SYSTEM
+        #GSAP
   #BASE SITE
         #SITE STRUCTURE
             #HEADER
                 # site-id (LOGO)
+                # hero
             #FOOTER
             #SECTIONS
             #SUB PAGES
@@ -62,13 +64,13 @@
 /* RESET */
 * {
   box-sizing: border-box;
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
 }
 
 /* BASE TYPOGRAPHY */
 /* BODY */
 body {
-  font-family: "textbook-new", sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
   font-style: normal;
   color: #333;
@@ -76,7 +78,7 @@ body {
   font-size: 100%;
 }
 
-.project-page {
+.home-page {
   overflow-x: hidden;
 }
 
@@ -90,16 +92,24 @@ body {
 }
 
 /* HEADING */
-h2 {
-  font-size: var(--unit-2xl)
-}
 
-h1,
-h2 {
+h1 {
   font-family: var(--font-headings);
   font-weight: 700;
   font-style: normal;
   color: var(--color-white);
+}
+
+h2 {
+  font-size: var(--unit-xl);
+  font-family: var(--font-headings);
+}
+
+h3 {
+  font-size: var(--unit-l);
+  font-family: var(--font-headings);
+  font-weight: 600;
+  font-style: italic;
 }
 
 /* clamp(最小, 可変, 最大) 画面の大きさによってfontのサイズを変更 */
@@ -232,6 +242,8 @@ h2 {
   max-width: 48%;
 }
 
+/* hero */
+
 /* BASE SITE */
 
 /* header logo */
@@ -252,11 +264,7 @@ footer {
   border-top: 1px solid #1c1c1c;
 }
 
-/* HEADER */
 
-.site-header {
-  overflow: hidden;
-}
 
 /*  MEDIA QUERIES */
 
@@ -295,7 +303,7 @@ body {
 
 .zindex-container {
   position: relative;
-  width: 100vw;
+  /* width: 100vw; */
   height: 100vh;
   border: 1px solid purple;
   z-index: 100;
@@ -303,19 +311,19 @@ body {
 }
 
 .normal-container {
-  position: relative;
+  /* position: relative; */
   /* top: 50vh; */
   /* width: 100%; */
   /* z-index: 0; */
-  padding: 20px;
+  /* padding: 20px; */
 
-  border: 10px solid red;
+  /* border: 10px solid red; */
 }
 
 section {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   /* max-width: 300vh; */
   /* width: 1000vh; */
   background-color: #ffffff;
@@ -358,18 +366,29 @@ img {
 
 }
 
-/* SITE STRUCTURE */
+/* BASE SITE - SITE STRUCTURE */
 
 .site-header {
   /* border: 1px solid; */
   display: flex;
   justify-content: space-between;
   padding: 1em;
-  position: absolute;
+  position: static;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
+}
+
+.home-page .site-header {
+  position: sticky;
+  margin-top: -100px;
+}
+
+.project-page .site-header {
+  position: static;
+  top: 0;
+  left: 0;
 }
 
 .site-title {
@@ -386,11 +405,28 @@ img {
   padding: 0;
 }
 
-.hero {
+.hero img {
   /* border: 10px solid green; */
+  width: 80%;
+  padding-top: 100px;
 }
 
 .section4 {
-  margin-top: 65vh;
-  border: 10px solid green;
+  margin-top: -30vh
+    /* border: 10px solid green; */
+}
+
+/* PROJECT GRID */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  --project-gap: 5vw;
+  gap: var(--project-gap);
+  padding: var(--project-gap);
+}
+
+.project-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
 }

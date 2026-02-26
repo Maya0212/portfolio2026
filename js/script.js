@@ -24,21 +24,21 @@ tl.to(".section1", {
   opacity: 0,
   duration: 3
 })
-.to(".section2", {
-  scale: 1,
-  z: 100,
-  opacity: 1,
-  duration: 1
-})
+  .to(".section2", {
+    scale: 1,
+    z: 100,
+    opacity: 1,
+    duration: 1
+  })
 
-/* 👇 ここが肝 */
-.to(".zindex-container", {
-  scale: 1,
-  yPercent: -50,
-  autoAlpha: 1,
-  duration: 1,
-  ease: "power2.inOut"
-})
+  /* 👇 ここが肝 */
+  .to(".zindex-container", {
+    scale: 1,
+    yPercent: -50,
+    autoAlpha: 1,
+    duration: 1,
+    ease: "power2.inOut"
+  })
 // .to(".black-container", {
 //   y: 0,
 //   autoAlpha: 1,
@@ -47,7 +47,7 @@ tl.to(".section1", {
 // }, "<"); 
 // ← 完全同時
 
- // 上に200px移動
+// 上に200px移動
 // gsap.to(".section1 .title", {
 //   y: -200,  
 //   scrollTrigger: {
