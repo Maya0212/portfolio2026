@@ -1,6 +1,7 @@
 /* #BASE CSS (Initital Setup)
 ---------------------------------
-    #BASE CONTENT
+#BASE RESET  
+#BASE CONTENT
         #TYPOGRAPHY
             #BODY
             #HEADINGS 
@@ -13,12 +14,12 @@
             #OVERLAY
         #COMPONENTS
             #BUTTONS
-    #BASE LAYOUT
+  #BASE LAYOUT
         #SIMPLE RESET
         #MEDIAQUERIES
         #CONTAINER
         #GRID SYSTEM
-    #BASE SITE
+  #BASE SITE
         #SITE STRUCTURE
             #HEADER
                 # site-id (LOGO)
@@ -27,73 +28,83 @@
             #SUB PAGES
         #SITE NAVIGATION
             #TOGGLE-NAV (Default for Small Screens)
-    #SITE MAIN
+  #SITE MAIN
         #TEXT RIGHT 
         #KEYFRAMES
-    #ANIMATION
-    #VIDEO
-    ＃ABOUT
+  #ANIMATION
+  #VIDEO
+  ＃ABOUT
 --------------------------------- */
 
 :root {
 
-     /* DEFINE ALL COMMONLY USED COLORS HERE */
-    --color-white: #ebf2f2;
+  /* DEFINE ALL COMMONLY USED COLORS HERE */
+  --color-white: #ebf2f2;
 
-     /* SIZING UNITS */
-    --unit-2xs: 0.25rem;
-    --unit-xs: 0.5rem;
-    --unit-s: 1rem;
-    --unit-m: 1.5rem;
-    --unit-l: 2rem;
-    --unit-xl: 3rem;
-    --unit-2xl: 4rem;
-    --unit-3xl: 6rem;
-    --unit-4xl: 9rem;
-    --container-width: 1100px;
-    --container-width: 80vw;
+  /* SIZING UNITS */
+  --unit-2xs: 0.25rem;
+  --unit-xs: 0.5rem;
+  --unit-s: 1rem;
+  --unit-m: 1.5rem;
+  --unit-l: 2rem;
+  --unit-xl: 3rem;
+  --unit-2xl: 4rem;
+  --unit-3xl: 6rem;
+  --unit-4xl: 9rem;
+  --container-width: 1100px;
+  --container-width: 80vw;
 
-    /*  DEFINE ALL FONTS USED HERE */
-    --font-headings: "alga", serif;
-    --font-body: "textbook-new", sans-serif;
+  /*  DEFINE ALL FONTS USED HERE */
+  --font-headings: "alga", serif;
+  --font-body: "textbook-new", sans-serif;
 }
 
-/* BASE TYPOGRAPHY */ 
+/* RESET */
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* BASE TYPOGRAPHY */
 /* BODY */
 body {
-    font-family: "textbook-new", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #333;
-    line-height: 1.4;
-    font-size: 100%;
+  font-family: "textbook-new", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #333;
+  line-height: 1.4;
+  font-size: 100%;
 }
 
 .project-page {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    height: 100%;
-    background-color: #ffffff;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  height: 100%;
+  background-color: #ffffff;
 }
 
 /* HEADING */
 h2 {
-    font-size: var(--unit-2xl)
+  font-size: var(--unit-2xl)
 }
-h1, h2 {
-    font-family: var(--font-headings);
-    font-weight: 700;
-    font-style: normal;
-    color: var(--color-white);
+
+h1,
+h2 {
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-style: normal;
+  color: var(--color-white);
 }
 
 /* clamp(最小, 可変, 最大) 画面の大きさによってfontのサイズを変更 */
-.section1 h1, .section2 h1 {
+.section1 h1,
+.section2 h1 {
   font-size: clamp(24px, 6vw, 35px);
 }
 
@@ -101,7 +112,8 @@ h1, h2 {
   font-size: clamp(30px, 3.2vw, 80px);
 }
 
-.section1 p, .section2 p {
+.section1 p,
+.section2 p {
   font-size: clamp(20px, 1.8vw, 30px);
 }
 
@@ -109,14 +121,16 @@ h1, h2 {
 /* HEADING LAYOUT */
 
 
-.section1, .section2 {
+.section1,
+.section2 {
   position: relative;
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
-.section1 h1, .section2 h1 {
+.section1 h1,
+.section2 h1 {
   position: fixed;
   top: 250px;
   left: 150px;
@@ -131,10 +145,10 @@ h1, h2 {
   z-index: 1000;
 
   transform-origin: left top;
-    text-indent: 1.35em;
-    letter-spacing: 0.08em;
-    line-height: 1.3;
-    padding-left: 0;
+  text-indent: 1.35em;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  padding-left: 0;
 }
 
 
@@ -144,8 +158,9 @@ h1, h2 {
 
 /* CONTAINERS */
 .container2 {
-    max-width: var(--container-width);
+  max-width: var(--container-width);
 }
+
 .container2 p {
   max-width: 700px;
 }
@@ -162,42 +177,47 @@ h1, h2 {
 
 @media (min-width: 768px) {
 
-    .row {
+  .row {
     display: flex;
     justify-content: space-between;
   }
-    .column.one-third {
-    flex: 0 0 32%;   /* 3列に収める（gap考慮して32%くらい） */
+
+  .column.one-third {
+    flex: 0 0 32%;
+    /* 3列に収める（gap考慮して32%くらい） */
     max-width: 32%;
   }
 
-     .column.one-third {
-    flex: 0 0 32%;   /* 3列 */
+  .column.one-third {
+    flex: 0 0 32%;
+    /* 3列 */
     max-width: 32%;
-    margin: 0;       /* PCでは自動marginを解除 */
-    padding: 0;      /* PCでは余白なし */
+    margin: 0;
+    /* PCでは自動marginを解除 */
+    padding: 0;
+    /* PCでは余白なし */
   }
 
-    .row > .column.one-half {
-        max-width: 46%;
-    }
+  .row>.column.one-half {
+    max-width: 46%;
+  }
 
-    .row > .column.one-third {
-        max-width: 29.3333%;
-    }
+  .row>.column.one-third {
+    max-width: 29.3333%;
+  }
 
-    .row > .column.two-thirds {
-        max-width: 62.6666%;
-    }
+  .row>.column.two-thirds {
+    max-width: 62.6666%;
+  }
 
-    .row > .column.one-fourth {
-        max-width: 21%;
-    }
+  .row>.column.one-fourth {
+    max-width: 21%;
+  }
 
-    .row > .column.centered {
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .row>.column.centered {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .row {
@@ -225,11 +245,11 @@ h1, h2 {
 
 /* FOOTER */
 footer {
-    padding: 30px 0;
-    background-color: #ffffffca;
-    text-align: center;
-    width: 100%;
-    border-top: 1px solid #1c1c1c;
+  padding: 30px 0;
+  background-color: #ffffffca;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid #1c1c1c;
 }
 
 /* HEADER */
@@ -241,31 +261,29 @@ footer {
 /*  MEDIA QUERIES */
 
 @media (max-width: 768px) {
-   /* MOBILE SIZED STYLING GOES HERE */
+  /* MOBILE SIZED STYLING GOES HERE */
 
 }
 
 @media (min-width: 1050px) {
-    body {
-        font-size: 112.5%; 
-    }
+  body {
+    font-size: 112.5%;
+  }
 }
 
 @media (min-width: 1250px) {
-    body {
-        font-size: 137.5%; 
-    }    
-    /* .container {
+  body {
+    font-size: 137.5%;
+  }
+
+  /* .container {
             max-width: 1200px;
     } */
 }
 
 
 /* GSAP */
-* {
-  box-sizing: border-box;
-  font-family: sans-serif;
-}
+
 
 html,
 body {
@@ -287,9 +305,11 @@ body {
 .normal-container {
   position: relative;
   /* top: 50vh; */
-  width: 100%;
-  z-index: 0;
+  /* width: 100%; */
+  /* z-index: 0; */
   padding: 20px;
+
+  border: 10px solid red;
 }
 
 section {
@@ -313,10 +333,12 @@ section {
   right: 0;
   z-index: 100;
 }
+
 .section1 {
   background-color: #c19b66;
   z-index: 3;
 }
+
 .section2 {
   background-color: #c19b66;
   z-index: 2;
@@ -324,8 +346,9 @@ section {
 
 .site-main {
   position: relative;
-  z-index: 1;
-  /* padding-top: -500vh; */
+  /* z-index: 2000; */
+  /* background-color: yellow; */
+  /* padding-top: 200vh; */
 }
 
 img {
@@ -333,4 +356,41 @@ img {
   height: auto;
   display: block;
 
+}
+
+/* SITE STRUCTURE */
+
+.site-header {
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.site-title {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  /* border: 10px solid green; */
+}
+
+.section4 {
+  margin-top: 65vh;
+  border: 10px solid green;
 }
