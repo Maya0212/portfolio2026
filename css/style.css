@@ -33,6 +33,7 @@
   #SITE MAIN
         #TEXT RIGHT 
         #KEYFRAMES
+        ＃TITLE
   #ANIMATION
   #VIDEO
   ＃ABOUT
@@ -47,8 +48,8 @@
   --unit-2xs: 0.25rem;
   --unit-xs: 0.5rem;
   --unit-s: 1rem;
-  --unit-m: 1.5rem;
-  --unit-l: 2rem;
+  --unit-m: 2rem;
+  --unit-l: 2.5rem;
   --unit-xl: 3rem;
   --unit-2xl: 4rem;
   --unit-3xl: 6rem;
@@ -101,15 +102,15 @@ h1 {
 }
 
 h2 {
-  font-size: var(--unit-xl);
+  font-size: var(--unit-l);
   font-family: var(--font-headings);
 }
 
 h3 {
-  font-size: var(--unit-l);
+  font-size: var(--unit-m);
   font-family: var(--font-headings);
-  font-weight: 600;
-  font-style: italic;
+  font-weight: 400;
+
 }
 
 /* clamp(最小, 可変, 最大) 画面の大きさによってfontのサイズを変更 */
@@ -183,6 +184,12 @@ h3 {
   /* background-color: #000000; */
 }
 
+.project-container {
+  border: 1px solid rgb(43, 0, 255);
+  width: 85%;
+  margin: 0 auto;
+}
+
 /* #GRID SYSTEM */
 
 @media (min-width: 768px) {
@@ -230,38 +237,28 @@ h3 {
   }
 }
 
+
+
 .row {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
   gap: 4%;
   flex-wrap: wrap;
 }
 
-.column.one-half {
-  /* flex: 0 0 48%; 2列に収める（gap考慮して48%くらい */
-  max-width: 48%;
-}
+/* NEW width SYNTAX (updated from min-width: 768px)  */
+@media (width <768px) {
 
-/* hero */
+  .row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--grid-gap);
 
-/* BASE SITE */
+  }
 
-/* header logo */
-.title {
-  position: absolute;
-  top: 50px;
-  left: 50px;
-  z-index: 1000;
-  margin: 0;
-}
-
-/* FOOTER */
-footer {
-  padding: 30px 0;
-  background-color: #ffffffca;
-  text-align: center;
-  width: 100%;
-  border-top: 1px solid #1c1c1c;
+  .one-half {
+    grid-column: auto / span 6;
+  }
 }
 
 
@@ -269,8 +266,11 @@ footer {
 /*  MEDIA QUERIES */
 
 @media (max-width: 768px) {
-  /* MOBILE SIZED STYLING GOES HERE */
 
+  /* MOBILE SIZED STYLING GOES HERE */
+  .body {
+    font-size: 100%;
+  }
 }
 
 @media (min-width: 1050px) {
@@ -368,6 +368,25 @@ img {
 
 /* BASE SITE - SITE STRUCTURE */
 
+/* header logo */
+.title {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 1000;
+  margin: 0;
+}
+
+/* FOOTER */
+footer {
+  padding: 30px 0;
+  background-color: #ffffffca;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid #1c1c1c;
+}
+
+
 .site-header {
   /* border: 1px solid; */
   display: flex;
@@ -405,15 +424,24 @@ img {
   padding: 0;
 }
 
+/* hero #BASE SITE */
+
 .hero img {
   /* border: 10px solid green; */
-  width: 80%;
+  /* width: 80%; */
   padding-top: 100px;
+  justify-content: space-between;
+
 }
 
 .section4 {
   margin-top: -30vh
     /* border: 10px solid green; */
+}
+
+.project-page {
+  border: 1px solid red;
+
 }
 
 /* PROJECT GRID */
@@ -429,4 +457,18 @@ img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* SITE MAIN */
+
+.site-main {
+  /* border: 1px solid red; */
+  /* padding: 100vh 0; */
+}
+
+/* SITE MAIN */
+h2 span {
+  font-size: 2rem;
+  font-style: italic;
+  margin-left: 12px;
 }
