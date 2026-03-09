@@ -199,11 +199,6 @@ h3 {
     justify-content: space-between;
   }
 
-  .column.one-third {
-    flex: 0 0 32%;
-    /* 3列に収める（gap考慮して32%くらい） */
-    max-width: 32%;
-  }
 
   .column.one-third {
     flex: 0 0 32%;
