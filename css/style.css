@@ -48,7 +48,7 @@
   --unit-2xs: 0.25rem;
   --unit-xs: 0.5rem;
   --unit-s: 1rem;
-  --unit-m: 2rem;
+  --unit-m: 1.8rem;
   --unit-l: 2.5rem;
   --unit-xl: 3rem;
   --unit-2xl: 4rem;
@@ -72,7 +72,7 @@
 /* BODY */
 body {
   font-family: var(--font-body);
-  font-weight: 400;
+  font-weight: 100;
   font-style: normal;
   color: #333;
   line-height: 1.4;
@@ -92,6 +92,18 @@ body {
   background-color: #ffffff;
 }
 
+p {
+  font-size: 1.2rem;
+}
+
+.project-info {
+  font-size: 1rem;
+}
+
+.overview {
+  font-size: 1.5rem;
+}
+
 /* HEADING */
 
 h1 {
@@ -109,8 +121,15 @@ h2 {
 h3 {
   font-size: var(--unit-m);
   font-family: var(--font-headings);
-  font-weight: 400;
+  font-weight: 700;
 
+}
+
+h4 {
+  font-size: var(--unit-s);
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: #D5B339;
 }
 
 /* clamp(最小, 可変, 最大) 画面の大きさによってfontのサイズを変更 */
@@ -192,12 +211,22 @@ h3 {
 
 /* #GRID SYSTEM */
 
+.row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4%;
+  /* flex-wrap: wrap; */
+}
+
+
+.overview-row {
+  display: grid;
+  grid-template-columns: 3fr 0.5fr;
+  gap: 4%;
+}
+
 @media (min-width: 768px) {
 
-  .row {
-    display: flex;
-    justify-content: space-between;
-  }
 
 
   .column.one-third {
@@ -230,31 +259,11 @@ h3 {
     margin-left: auto;
     margin-right: auto;
   }
+
+
+
 }
 
-
-
-.row {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 4%;
-  flex-wrap: wrap;
-}
-
-/* NEW width SYNTAX (updated from min-width: 768px)  */
-@media (width <768px) {
-
-  .row {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: var(--grid-gap);
-
-  }
-
-  .one-half {
-    grid-column: auto / span 6;
-  }
-}
 
 
 
@@ -264,7 +273,7 @@ h3 {
 
   /* MOBILE SIZED STYLING GOES HERE */
   .body {
-    font-size: 100%;
+    font-size: 60%;
   }
 }
 
