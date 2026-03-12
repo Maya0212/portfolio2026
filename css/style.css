@@ -147,6 +147,11 @@ h4 {
   font-size: clamp(20px, 1.8vw, 30px);
 }
 
+a {
+  color: #333;
+  text-decoration: none;
+}
+
 
 /* HEADING LAYOUT */
 
