@@ -431,7 +431,8 @@ h2 {
 }
 
 a {
-  color: #ffffff;
+  color: #000000;
+  text-decoration: none;
 }
 
 .site-nav ul {
@@ -668,7 +669,7 @@ a {
 }
 
 .hero-video video {
-  width: 300px;
+  width: 50%;
   height: auto;
   object-fit: cover;
   border-radius: 12%;
