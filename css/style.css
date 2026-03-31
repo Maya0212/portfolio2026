@@ -136,6 +136,13 @@ img.centered {
   margin-inline: auto;
 }
 
+/* ALL VIDEOS */
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* BASE RAYOUT */
 
 /* CONTAINERS */
@@ -449,7 +456,7 @@ a {
 /*  */
 .site-footer {
   background-color: #d67923;
-  padding: 45px 0 20px;
+  padding: 45px 0 20px 0;
   font-size: 15px;
   line-height: 24px;
   color: #ffffff;
@@ -631,6 +638,11 @@ a {
 /* HOME PAGE  */
 .home-page {
   overflow-x: hidden;
+}
+
+/* HERO */
+h2 {
+  color: #ffffff;
 }
 
 /* TALKMATE HERO */
@@ -840,6 +852,9 @@ section {
 h2 span {
   font-size: 2rem;
   font-style: italic;
+}
+
+span.moveright {
   margin-left: 12px;
 }
 
