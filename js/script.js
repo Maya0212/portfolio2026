@@ -187,5 +187,7 @@ function animate() {
 initCanvas();
 animate();
 
+// paper
+
 
 
