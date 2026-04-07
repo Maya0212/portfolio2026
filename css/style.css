@@ -117,6 +117,14 @@ h4 {
   color: #D5B339;
 }
 
+h5 {
+  font-size: 100px;
+  font-family: var(--font-headings);
+  font-weight: 500;
+  margin: auto;
+  opacity: 0.1;
+}
+
 /* ALL IMAGES */
 
 img {
@@ -423,18 +431,10 @@ video {
 }
 
 /* FOOTER */
-/* .site-footer {
-  padding: 100px;
-  padding-bottom: 50px;
-  background-color: #ffffff;
-  width: 100%;
-  border-radius: 60px 60px 0 0;
-  margin: auto 0;
-  border-top: 1px solid #1c1c1c;
-} */
 
 h2 {
-  margin: 0;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 a {
@@ -463,17 +463,16 @@ a {
   border-radius: 60px 60px 0 0;
 }
 
-.site-footer hr {
-  border-top-color: #bbb;
-  opacity: 0.5;
-}
-
-.site-footer hr.small {
-  margin: 20px 0;
+.site-footer h2 {
+  line-height: 1;
 }
 
 .site-footer a {
   color: #ffffff;
+
+  @media (max-width: 768px) {
+    justify-content: space-between;
+  }
 }
 
 .site-footer a:hover {
@@ -606,10 +605,83 @@ a {
   }
 }
 
+/* BUTTON */
+/* button {
+  display: inline-block;
+  background: #f6c72a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 50px;
+}
+
+.button:hover {
+  background: #ffffff;
+  color: #fff;
+} */
+
+.button {
+  display: inline-block;
+  background: linear-gradient(to right, #f6c72a, #f9e066);
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  text-decoration: none;
+  border-radius: 40px;
+  transition: 0.5s ease;
+
+}
+
+.button:hover {
+  background: linear-gradient(to right, #f9e066, #f6c72a);
+  /* 左右反転グラデーション */
+  color: #5a582ef1;
+  /* 文字色を見やすく変更 */
+}
 
 
 
 /* PAGE-SPECIFIC STYLING */
+
+.sitefooter-line {
+  height: 1px;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  margin: 20px auto;
+  /* 上下の余白と中央寄せ */
+}
+
+/* ABOUT PAGE*/
+ul {
+  list-style: none;
+}
+
+.about-site-nav a {
+  color: black;
+}
+
+.line {
+  background-color: rgb(48, 48, 48);
+  height: 1px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+p {
+  margin-top: 0;
+}
+
+.about-img {
+  display: block;
+  width: 70%;
+  margin-left: auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
 
 /* COL */
 .image-left {
@@ -853,6 +925,8 @@ h2 span {
   font-size: 2rem;
   font-style: italic;
 }
+
+
 
 span.moveright {
   margin-left: 12px;
