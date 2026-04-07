@@ -781,6 +781,10 @@ h2.subtitle {
   font-size: clamp(20px, 1.8vw, 30px);
 }
 
+.hero img {
+  width: 100%;
+}
+
 
 .hero a.button {
   /* color: #333; */
