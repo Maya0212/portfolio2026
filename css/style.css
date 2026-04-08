@@ -131,6 +131,19 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  padding: 20px;
+}
+
+.hero img {
+  padding: 0;
+}
+
+.site-header img {
+  padding: 0;
+}
+
+.about img {
+  padding: 0;
 }
 
 /* FULL WIDTH IMAGES */
@@ -624,19 +637,19 @@ a {
 .button {
   display: inline-block;
   background: linear-gradient(to right, #f6c72a, #f9e066);
-  color: #fff;
+  color: #878678f1;
   border: none;
   padding: 8px 18px;
   text-decoration: none;
   border-radius: 40px;
   transition: 0.5s ease;
-
 }
+
 
 .button:hover {
   background: linear-gradient(to right, #f9e066, #f6c72a);
   /* 左右反転グラデーション */
-  color: #5a582ef1;
+  color: #4c4a27f1;
   /* 文字色を見やすく変更 */
 }
 
@@ -687,6 +700,21 @@ p {
 .image-left {
   display: block;
   margin-left: auto;
+
+  @media (width < 768px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.image-right {
+  display: block;
+  margin-right: auto;
+
+  @media (width < 768px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .video-conversation video {
