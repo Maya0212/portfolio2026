@@ -380,6 +380,21 @@ video {
 
 /* HEADER */
 
+/* .container-hero {
+  display: flex;
+  padding: 1em;
+  position: static;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-top: -100px;
+  position: sticky;
+} */
+
+
+
+
 
 .site-header {
   /* border: 1px solid; */
