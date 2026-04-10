@@ -191,3 +191,14 @@ animate();
 
 
 
+window.addEventListener("scroll", () => {
+  const text = document.querySelector(".hero-text");
+  const scroll = window.scrollY;
+
+  const progress = Math.min(scroll / 400, 1);
+
+  text.style.transform =
+    `translate(-50%, calc(-50% + ${progress * 150}px))`;
+
+  text.style.opacity = 1 - progress;
+});

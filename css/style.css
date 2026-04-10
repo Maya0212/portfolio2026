@@ -131,7 +131,6 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-  padding: 20px;
 }
 
 .hero img {
@@ -155,6 +154,14 @@ img.full-width {
 
 img.centered {
   margin-inline: auto;
+}
+
+img.padding-bottom-small {
+  padding-bottom: var(--unit-s);
+}
+
+img.padding-bottom-large {
+  padding-bottom: var(--unit-xl);
 }
 
 /* ALL VIDEOS */
@@ -798,7 +805,7 @@ h2.subtitle {
   font-family: var(--font-headings);
   font-weight: 400;
   font-size: clamp(30px, 3.2vw, 80px);
-  margin: 0 0 2em 0;
+  margin: 0 0 .5em 0;
 }
 
 .hero p {
@@ -820,7 +827,7 @@ h2.subtitle {
   font-size: .8em;
   margin-top: .5em;
   ;
-  color: white;
+  color: rgb(58, 58, 58);
   text-decoration: none;
 }
 
@@ -855,13 +862,13 @@ h2.subtitle {
 }
 
 .hero .section1 {
-  /* background-color: #c19b66; */
-  background-color: rgba(183, 98, 0, 0.5);
+  /* background-color: #d5d5d5; */
+  /* background-color: rgba(183, 98, 0, 0.5); */
   z-index: 3;
 }
 
 .hero .section2 {
-  background-color: #c19b66;
+  /* background-color: #c19b66; */
   z-index: 2;
 }
 
@@ -1025,3 +1032,190 @@ b {
 }
 
 /* paper */
+
+/* .container-button {
+  position: relative;
+  margin-top: 0;
+  max-width: 500px;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.5s ease;
+}
+
+.container-button .overlay {
+  display: block;
+  background: rgba(0, 0, 0, .3);
+}
+
+.container-button img {
+  position: absolute;
+  max-width: 500px;
+  height: auto;
+  left: 0;
+}
+
+.title {
+  position: absolute;
+  width: 500px;
+  left: 0;
+  top: 120px;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  z-index: 1;
+  transition: top .5s ease;
+}
+
+.container-button:hover .title {
+  top: 90px;
+}
+
+.container-button .button {
+  position: absolute;
+  width: 500px;
+  left: 0;
+  top: 180px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.container-button .button a {
+  width: 200px;
+  padding: 12px 48px;
+  text-align: center;
+  color: white;
+  border: solid 2px white;
+  z-index: 1;
+}
+
+.container-button:hover .button {
+  opacity: 1;
+} */
+
+/* .container-button {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 0;
+  aspect-ratio: 5 / 3;
+  画像比率（調整OK）
+}
+
+*/
+/* .container-button img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  left: 0;
+  top: 0;
+}
+
+
+.overlay:hover {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.5s ease;
+}
+
+
+.title {
+  position: absolute;
+  width: 100%;
+  top: 25%;
+  left: 0;
+  font-weight: 700;
+  font-size: 5vw;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  z-index: 1;
+  transition: top 0.5s ease;
+}
+
+
+.container:hover .title {
+  top: 20%;
+}
+
+#project-button .button {
+  position: absolute;
+  width: 100%;
+  top: 60%;
+  left: 0;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.container .button a {
+  display: inline-block;
+  padding: 12px 48px;
+  color: white;
+  border: 2px solid white;
+  text-decoration: none;
+}
+
+
+.container:hover .button {
+  opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 6vw;
+    top: 30%;
+  }
+
+  .container .button a {
+    padding: 5px 10px;
+  }
+
+  .img {
+    width: 20%;
+    height: auto;
+    justify-content: space-between;
+    position: fixed;
+  }
+
+
+  @media (max-width: 480px) {
+    .title {
+      font-size: 7vw;
+      top: 15%;
+    }
+
+    .container .button {
+      top: 65%;
+    }
+  } */
+
+/* body {
+  margin: 0;
+  height: 300vh;
+} */
+
+.hero-text {
+  position: fixed;
+  /* ←ここがポイント */
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5vw;
+}
