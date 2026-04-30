@@ -13,9 +13,9 @@ function switch_text(el, txt, delay, callback) {
 }
 
 function init() {
-  switch_text('#title span', 'Graphic Designer', 0);
-  switch_text('#title span', 'UI/UX Designer', 2000);
-  switch_text('#title span', 'Web Designer', 4000, function
+  switch_text('#title span', 'Graphic Design', 0);
+  switch_text('#title span', 'UI/UX Design', 2000);
+  switch_text('#title span', 'Illustration', 4000, function
     () {
     // run again after 2s
     setTimeout(init, 1500);
