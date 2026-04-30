@@ -40,7 +40,7 @@
 
 
 
-    <header class="site-header white">
+    <header class="site-header">
 
         <div class="site-id">
             <h1 class="site-title">Maya's Portfolio</h1>
@@ -64,34 +64,38 @@
 
         <section class="hero">
 
-            <div class="hero-safe-container">
+            <div class="zindex-container">
 
                 <section class="section1 panel">
+                    <!-- <h1 class="hero-text">Unlock your digital potential</h1>
+                    <div style="height:200vh;"></div> -->
                     <video class="video-bg" src="img/maya-sketching.v2.mp4" muted autoplay loop></video>
-                    <img src="img/logo-white.png" alt="Maya Logo" width="100" height="100">
-                    <!-- <h2 class="subtitle">Design is <em>Everywhere</em></h2>
-                    <a class="button" href="#projects">View My Portfolio</a> -->
+                    <h2 class="subtitle">Design is <em>Everywhere</em></h2>
+                    <a class="button" href="#projects">View My Portfolio</a>
                 </section>
 
                 <section class="section2 panel">
-                    <!-- <img src="img/hero-bg-gradation-text.jpg" alt=""> -->
                     <div class="container2">
 
                         <div class="row">
-                            <div class="one-whole">
-                                <h6>Hi, I'm</h6>
-                                <h2>Maya Hashem.</h2>
-                                <h3 id="title">Influenced Hawaii and Japan. I'm a <span>HTML</span><b id="cursor">_</b>
-
-                                </h3>
+                            <div class="one-half">
+                                <!-- <h2 class="animate-on-scroll">Hi, I'm Maya.</h2>
+                                <b>
+                                    <span>
+                                        Interface<br /> Design<br />
+                                        Graphic<br /> designer<br />
+                                        UI/UX<br />
+                                    </span>
+                                </b>
+                                <h2 class="animate-on-scroll">influenced by the visual cultures and sensibilities of
+                                    Japan and Hawaii.</h2> -->
+                                <h2>Hi, I'm Maya Hashem.</h2>
+                                <h1 id="title"> I'm a <span>HTML</span><b id="cursor">_</b>
+                                </h1>
 
                             </div>
+
                         </div>
-                    </div>
-                    <div class="bottom-bar">
-                        <p class="left">MAYA HASHEM</p>
-                        <!-- <p class="center">FREELANCE DESIGNER & DEVELOPER</p> -->
-                        <p class="right">BASED IN TOKYO</p>
                     </div>
                 </section>
             </div>
@@ -104,25 +108,6 @@
 
 
         <body>
-
-            <section class="home-about">
-
-
-                <!-- <div class="container2">
-
-                    <div class="row">
-                        <div class="col-6">
-                            <h2>Hi, I'm Maya Hashem.</h2>
-                            <h1 id="title"> I'm a <span>HTML</span><b id="cursor">_</b>
-                            </h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ea sunt nulla rerum quo
-                                necessitatibus facere libero vitae ullam? Blanditiis non obcaecati autem porro adipisci
-                                repellendus, perspiciatis veritatis nesciunt tempore.</p>
-                        </div>
-                    </div>
-                </div> -->
-                </div>
-            </section>
 
             <div class="normal-container">
 
@@ -138,6 +123,7 @@
                                         src="img/Incense-package-mockup7.jpg" alt="" widc th="850" height="700">
                                 </a>
                             </div>
+
                         </div>
                         <div class="project-item vert-spaced">
 
@@ -314,6 +300,7 @@
 
     <footer class="site-footer">
         <div class="footer-container">
+            <!-- <div class="sitefooter-line"></div> -->
             <div class="str">
                 <h3 class="footer-title">Thank you for your <span>curiosity</span>.</h3><br>
             </div>
@@ -323,32 +310,37 @@
                     <h2>Let's <br><span>build</span> <br>together.</h2>
                     <p class="text-justify">Have something in mind? I'd love to hear it. Alwayas happy to connect!
                     </p>
-
-
+                    <div class="col-6">
+                        <p class="copyright">Coded by Maya Hashem</p>
+                    </div>
                 </div>
 
+                <div class="push-9">
+
+                </div>
+            </div>
+            <div class="sitefooter-row">
                 <div class="col-6">
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="about/index.html">About</a></li>
-                        <div class="push-10">
-                            <ul class="social-icons">
-                                <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
                     </ul>
                 </div>
+            </div>
 
+        </div>
+        <div class="container">
+            <div class="row">
+
+                <div class="push-10">
+                    <ul class="social-icons">
+                        <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-
-        <div class="footerline-container">
-            <p class="copyright">© Coded by Maya Hashem</p>
-            <div class="sitefooter-line"></div>
-        </div>
-
     </footer>
 
 
@@ -357,15 +349,12 @@
     <!-- MAIN JS FILE -->
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
-    <!-- ScrollTrigger（必須） -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script> -->
-
-    <!-- GSAP SWITCH TEXT -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
-    <script src="js/script-gsap-switch-text.js"></script>
+    <!-- ScrollTrigger（必須） -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- HOME HERO GSAP -->
+    <script src="js/script-gsap.js"></script>
 
     <!-- Your JS -->
     <script src="js/script.js"></script>
