@@ -890,15 +890,14 @@ video {
 /* SECTION */
 
 .project-page section {
-
-  min-height: 80vh;
   display: grid;
   place-items: center;
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
-
-  padding: 10%;
+  background-position: center;
+  padding: 5%;
   perspective: 1px;
+
 }
 
 .project-page section:nth-child(even) {
@@ -1035,18 +1034,22 @@ p {
 }
 
 /* HERO */
-h2.subtitle {
+
+.sub h2.subtitle {
   color: #ffffff;
 }
 
 .incense-hero {
   padding: 0;
   background-image: url('img/incense-mockup-forest.jpg');
+  background-repeat: no-repeat;
+  min-height: 80vh;
 }
 
 .motion-hero {
   padding: 0;
   background-image: url('img/colorful-beach-st-john-virgin-island.jpg');
+  min-height: 80vh;
 }
 
 .nice-hero {
@@ -1054,11 +1057,13 @@ h2.subtitle {
   background-image: url('img/place_massena.v2.jpg');
   align-items: center;
   justify-content: center;
+  min-height: 80vh;
 }
 
 .bookcover-hero {
   padding: 0;
   background-image: url('img/book-cover.topimg.jpg');
+  min-height: 80vh;
 }
 
 
@@ -1121,7 +1126,6 @@ h2.subtitle {
 }
 
 
-
 .hero p {
   text-wrap: balance;
   /* margin-inline: auto; */
@@ -1179,8 +1183,6 @@ h2.subtitle {
 }
 
 .hero .section1 {
-  /* background-color: #d5d5d5; */
-  /* background-color: rgba(183, 98, 0, 0.5); */
   z-index: 3;
   animation-name: fade-zoomout;
   animation-duration: 1s;
@@ -1305,7 +1307,7 @@ h2.subtitle {
   }
 }
 
-.new-hero-outline-text {
+hero .new-hero-outline-text {
   position: absolute;
   left: 0;
   bottom: 6%;
