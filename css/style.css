@@ -54,12 +54,19 @@
   --unit-2xl: 4rem;
   --unit-3xl: 6rem;
   --unit-4xl: 9rem;
-  --container-width: 1100px;
+  /* --container-width: 1100px; */
   --container-width: 80vw;
+  --site-margin: 8vw;
+
+  @media (width < 768px) {
+    --site-margin: 1em;
+  }
 
   /*  DEFINE ALL FONTS USED HERE */
-  --font-headings: "alga", serif;
-  --font-body: "textbook-new", sans-serif;
+  --font-headings: "alga",
+  serif;
+  --font-body: "textbook-new",
+  sans-serif;
 
   --maya-orange: #d67923;
 }
@@ -107,10 +114,12 @@ h2 {
 
 .hero h2 {
   font-size: var(--unit-2xl);
+  line-height: 1;
 }
 
 .site-footer h2 {
   font-size: var(--unit-3xl);
+  font-size: clamp(2rem, 20vw, 6rem);
   font-family: var(--font-headings);
 }
 
@@ -295,6 +304,14 @@ video {
   max-width: 100%;
   height: auto;
   display: block;
+  border-radius: 10px;
+}
+
+.final-logo {
+  margin: 0;
+  padding: 3em 0 6em 0;
+  display: grid;
+  place-items: center;
 }
 
 /* BASE RAYOUT */
@@ -304,7 +321,8 @@ video {
   /* max-width: var(--container-width); */
   width: 100%;
   margin: 0 auto;
-  padding-inline: 2em;
+  padding-inline: var(--site-margin);
+  position: relative;
 }
 
 .container {
@@ -563,7 +581,8 @@ video {
 
 
 .footerline-container {
-  width: 90%;
+  width: 100%;
+  padding-inline: 1em;
   margin: 0 auto;
 }
 
@@ -701,9 +720,8 @@ video {
 }
 
 .footer-container {
-  max-width: var(--container-width);
   margin: 0 auto;
-  padding-inline: 2em;
+  padding-inline: var(--site-margin);
   max-height: 500px;
 }
 
@@ -791,7 +809,7 @@ video {
 
 @media (max-width:767px) {
   .site-footer {
-    padding-bottom: 0
+    padding-bottom: 3;
   }
 
   .site-footer .copyright-text,
@@ -1063,7 +1081,7 @@ h2.subtitle {
   /* ←これ重要 */
   padding: 5%;
 
-  background-image: url("../img/island-illustration3.png");
+  /* background-image: url("../img/island-illustration3.png"); */
   /* ←パスも修正 */
   background-size: cover;
   background-position: center;
@@ -1095,7 +1113,7 @@ h2.subtitle {
   border-radius: 12%;
 }
 
-/* GSAP HOME HERO SECTION*/
+/* HOME HERO SECTION*/
 
 .hero {
   padding: 0;
@@ -1167,7 +1185,7 @@ h2.subtitle {
   animation-name: fade-zoomout;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  animation-delay: 2s;
+  animation-delay: 0.8s;
 }
 
 @keyframes fade-zoomout {
@@ -1191,7 +1209,7 @@ h2.subtitle {
 .hero .section2 {
   background-color: #ffffff80;
   z-index: 2;
-  background-image: url("../img/hero-bg-stroke-text.png");
+  /* background-image: url("../img/hero-bg-stroke-text.png"); */
   background-size: contain;
   background-position: 50% 90%;
   background-repeat: no-repeat;
@@ -1287,7 +1305,11 @@ h2.subtitle {
   }
 }
 
-
+.new-hero-outline-text {
+  position: absolute;
+  left: 0;
+  bottom: 6%;
+}
 
 /* MAIN CONTENT AREA */
 
@@ -1333,7 +1355,7 @@ section {
 
 /* MAIN PROJECT GRID */
 .main-project-grid {
-  padding: 8vw;
+  padding: var(--site-margin);
 
   p {
     margin-bottom: 0.5em;
@@ -1751,17 +1773,14 @@ h1 b {
 .bottom-bar {
   position: fixed;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-
-
-  width: 90%;
-
-
+  left: 0;
+  width: 100%;
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  /* width: 90%; */
   display: flex;
   justify-content: space-between;
-
-  padding: 20px 0;
+  padding: 20px 1em;
   z-index: 9999;
   pointer-events: none;
 }
