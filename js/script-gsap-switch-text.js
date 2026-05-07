@@ -91,3 +91,17 @@ window.addEventListener("load", () => {
     resizeTimer = setTimeout(build, 200);
   });
 });
+
+// MARKER ANIMATION
+gsap.utils.toArray(".marker").forEach((el) => {
+  gsap.to(el, {
+    scrollTrigger: {
+      trigger: el, // ← 自分自身をトリガーにする
+      start: "top bottom",
+      toggleClass: {
+        targets: el,
+        className: "active",
+      },
+    },
+  });
+});
