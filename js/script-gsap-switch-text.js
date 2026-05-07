@@ -55,3 +55,39 @@ window.addEventListener("scroll", () => {
     copyright.classList.remove("active");
   }
 });
+
+// SMOOTH SCROLL
+
+window.addEventListener("load", () => {
+  const container = document.querySelector(".horizontal-container");
+
+  function build() {
+    ScrollTrigger.getAll().forEach(t => t.kill());
+    gsap.set(container, { x: 0 });
+
+    const distance =
+      container.scrollWidth - document.documentElement.clientWidth;
+
+    gsap.to(container, {
+      x: -distance,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".horizontal-section",
+        start: "top top",
+        end: "+=" + distance,
+        pin: true,
+        scrub: 1
+      }
+    });
+
+    ScrollTrigger.refresh();
+  }
+
+  build();
+
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(build, 200);
+  });
+});
