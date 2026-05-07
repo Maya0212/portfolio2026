@@ -1036,7 +1036,7 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 100%;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   padding-top: 10vh;
   padding-bottom: 50vh;
   /* min-height: 50vh; */
@@ -1053,6 +1053,18 @@ p {
 
 .project-page .casestudy-nice {
   background-image: url(../img/hero-nice.jpg);
+}
+
+.project-page .casestudy-incese {
+  background-image: url("../img/hero-incense.jpg");
+}
+
+.project-page .casestudy-bookcover {
+  background-image: url('../img/hero-bookcover.jpg');
+}
+
+.project-page .casestudy-motion {
+  background-image: url('img/l&l-shop-pic.jpg');
 }
 
 .casestudy-hero h1 {
