@@ -58,39 +58,39 @@ window.addEventListener("scroll", () => {
 
 // SMOOTH SCROLL
 
-window.addEventListener("load", () => {
-  const container = document.querySelector(".horizontal-container");
+// window.addEventListener("load", () => {
+//   const container = document.querySelector(".horizontal-container");
 
-  function build() {
-    ScrollTrigger.getAll().forEach(t => t.kill());
-    gsap.set(container, { x: 0 });
+//   function build() {
+//     ScrollTrigger.getAll().forEach(t => t.kill());
+//     gsap.set(container, { x: 0 });
 
-    const distance =
-      container.scrollWidth - document.documentElement.clientWidth;
+//     const distance =
+//       container.scrollWidth - document.documentElement.clientWidth;
 
-    gsap.to(container, {
-      x: -distance,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".horizontal-section",
-        start: "top top",
-        end: "+=" + distance,
-        pin: true,
-        scrub: 1
-      }
-    });
+//     gsap.to(container, {
+//       x: -distance,
+//       ease: "none",
+//       scrollTrigger: {
+//         trigger: ".horizontal-section",
+//         start: "top top",
+//         end: "+=" + distance,
+//         pin: true,
+//         scrub: 1
+//       }
+//     });
 
-    ScrollTrigger.refresh();
-  }
+//     ScrollTrigger.refresh();
+//   }
 
-  build();
+//   build();
 
-  let resizeTimer;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(build, 200);
-  });
-});
+//   let resizeTimer;
+//   window.addEventListener("resize", () => {
+//     clearTimeout(resizeTimer);
+//     resizeTimer = setTimeout(build, 200);
+//   });
+// });
 
 // MARKER ANIMATION
 gsap.utils.toArray(".marker").forEach((el) => {
@@ -105,3 +105,64 @@ gsap.utils.toArray(".marker").forEach((el) => {
     },
   });
 });
+
+// FADE IN
+const elements = document.querySelectorAll('.animate-on-scroll');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    } else {
+      entry.target.classList.remove('visible');
+    }
+
+  });
+}, {
+  threshold: 0.2
+});
+
+elements.forEach(el => observer.observe(el));
+
+
+// SLIDER
+
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+
+  const slideshow = document.querySelector(".slideshow");
+
+  const slides = slideshow.querySelectorAll(".mySlides");
+  const dots = slideshow.querySelectorAll(".dot");
+
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+
+  slides.forEach(slide => {
+    slide.style.display = "none";
+  });
+
+  dots.forEach(dot => {
+    dot.classList.remove("active");
+  });
+
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].classList.add("active");
+}

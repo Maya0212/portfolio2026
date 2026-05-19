@@ -37,6 +37,7 @@
   #ANIMATION
   #VIDEO
   ＃ABOUT
+  #HOVER EFFECTS
 --------------------------------- */
 
 :root {
@@ -81,7 +82,7 @@
 /* BODY */
 body {
   font-family: var(--font-body);
-  font-weight: 100;
+  font-weight: 300;
   font-style: normal;
   color: #333;
   line-height: 1.4;
@@ -173,6 +174,15 @@ h7 {
 
 p {
   text-wrap: pretty;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.home-page p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: rgb(20, 20, 20);
+  font-style: normal;
 }
 
 p.overview {
@@ -206,8 +216,10 @@ h2.incense-overview span {
 }
 
 .home-page span {
-  font-style: italic;
-  color: var(--maya-orange);
+  font-style: normal;
+  color: rgb(172, 172, 172);
+  font-size: 1.2rem;
+  font-weight: 300;
 }
 
 .site-footer span {
@@ -248,7 +260,7 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-  border-radius: 2%;
+  border-radius: 10px;
 }
 
 .hero img {
@@ -272,6 +284,12 @@ img.color {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+.nice-slideshow .slideshow-container img {
+  width: 60%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 
 /* FULL WIDTH IMAGES */
 img.full-width {
@@ -288,9 +306,9 @@ img.padding-bottom-small {
   padding-bottom: var(--unit-s);
 }
 
-img.padding-bottom-large {
+/* img.padding-bottom-large {
   padding-bottom: var(--unit-xl);
-}
+} */
 
 img.typography {
   width: 75%;
@@ -1052,7 +1070,7 @@ p {
 }
 
 .project-page .casestudy-nice {
-  background-image: url(../img/hero-nice.jpg);
+  background-image: url(../img/nice-logo.jpg);
 }
 
 .project-page .casestudy-incese {
@@ -1471,6 +1489,17 @@ h1 b {
   visibility: hidden;
 }
 
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* PROJECT INFO */
 
@@ -1618,9 +1647,147 @@ h1 b {
 
 }
 
-/* 中央だけ中央寄せ */
-/* .bottom-bar .center {
+/* HOVER EFFECTS */
+figure {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 2%;
+}
+
+.hover01 figure img,
+.hover01 figure video {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  border-radius: 2%;
+}
+
+.hover01 figure:hover img,
+.hover01 figure:hover video {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* SLIDER */
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  /* ←はみ出し防止 */
+}
+
+.mySlides img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  /* or coverでもOK */
+}
+
+@media (max-width: 768px) {
+  .slideshow-container {
+    padding: 0 10px;
+  }
+
+  .mySlides img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-} */
+  top: 0;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: orange;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 5%;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Position the "previouse button" to the right */
+.prev {
+  left: 5%;
+  border-radius: 3px 0 0 3px;
+}
+
+/* inverts colours so white arrow and orange background. */
+.prev:hover,
+.next:hover {
+  color: white;
+  background-color: orange;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: orange;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.slideshow .dot {
+  cursor: pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: orange;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.slideshow .dot.active,
+.slideshow .dot:hover {
+  background-color: gold;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
