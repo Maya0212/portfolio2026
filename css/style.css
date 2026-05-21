@@ -339,6 +339,7 @@ video {
   height: auto;
   display: block;
   border-radius: 10px;
+  margin: 0 auto;
 }
 
 .final-logo {
@@ -933,9 +934,9 @@ video.padding-bottom-large {
   background-position: center;
 }
 
-.project-page section:nth-child(even) {
+/* .project-page section:nth-child(even) {
   background: rgb(255, 255, 255);
-}
+} */
 
 .image-wrapper {
   background: yellow;
@@ -1103,6 +1104,10 @@ p {
 
 .project-page .casestudy-motion {
   background-image: url('img/l&l-shop-pic.jpg');
+}
+
+.project-page .casestudy-cha {
+  background-image: url('img/zen-matcha-latte.jpg');
 }
 
 .casestudy-hero h1 {
@@ -1723,39 +1728,52 @@ figure {
 }
 
 /* Next & previous buttons */
-.prev,
-.next {
+.btn {
+  color: #d67923;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid #d67923;
+  padding: 10px 20px;
+  font-size: 13px;
   cursor: pointer;
-  position: absolute;
-  top: 0;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: orange;
   font-weight: bold;
-  font-size: 30px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  background: transparent;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
 }
 
-/* Position the "next button" to the right */
-.next {
-  right: 5%;
-  border-radius: 3px 0 0 3px;
-}
-
-/* Position the "previouse button" to the right */
-.prev {
-  left: 5%;
-  border-radius: 3px 0 0 3px;
-}
-
-/* inverts colours so white arrow and orange background. */
-.prev:hover,
-.next:hover {
+.btn:hover {
   color: white;
-  background-color: orange;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color: #d67923;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.btn:hover::before {
+  width: 160%;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .btn {
+    font-size: 8px;
+    padding: 8px 13px;
+  }
 }
 
 /* Number text (1/3 etc) */
