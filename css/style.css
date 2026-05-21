@@ -225,11 +225,18 @@ h2.incense-overview span {
   font-style: italic;
 }
 
-.home-page span {
+.home-page .project-item span {
   font-style: normal;
   color: rgb(172, 172, 172);
   font-size: 1.2rem;
   font-weight: 300;
+}
+
+.home-page .footer-title span {
+  font-style: normal;
+  color: var(--maya-orange);
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .site-footer span {
@@ -774,7 +781,7 @@ video.padding-bottom-large {
 .footer-container {
   margin: 0 auto;
   padding-inline: var(--site-margin);
-  max-height: 500px;
+  /* max-height: 500px; */
 }
 
 @media (max-width: 768px) {
@@ -811,13 +818,26 @@ video.padding-bottom-large {
   text-decoration: none;
 }
 
-/* .footer-links {
-  padding-right: 0;
+@media (width>768px) {
+  .flex-align-bottom {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+
+
+.footer-links {
+  /* padding-right: 0;
   padding-left: 0;
   list-style: none;
   justify-content: space-between;
-  display: flex;
-} */
+  display: flex; */
+  margin: 0;
+  padding: 0;
+}
 
 .footer-links li {
   display: block;
@@ -1061,14 +1081,14 @@ p {
   width: 70%;
   height: auto;
   object-fit: cover;
-  border-radius: 12%;
+  border-radius: 10px;
 }
 
 .costom-illustration video {
   width: 50%;
   height: auto;
   object-fit: cover;
-  border-radius: 12%;
+  border-radius: 10px;
 }
 
 /* .right-title {
@@ -1220,7 +1240,7 @@ p {
   width: 50%;
   height: auto;
   object-fit: cover;
-  border-radius: 12%;
+  border-radius: 10px;
 }
 
 /* HOME HERO SECTION*/
@@ -1690,7 +1710,7 @@ figure {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  border-radius: 2%;
+  border-radius: 10px;
 }
 
 .hover01 figure img,
@@ -1699,7 +1719,7 @@ figure {
   transform: scale(1);
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
-  border-radius: 2%;
+  border-radius: 10px;
 }
 
 .hover01 figure:hover img,
